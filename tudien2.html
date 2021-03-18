@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dictionary</title>
+</head>
+<body>
+<input type="text" id="word" placeholder="Enter a word"/>
+<input type="button" onclick="Nhap()" value="Translate"/>
+
+<script>
+    var VietNamese = ["ăn", "uống", "ngủ", "chơi", "hát", "bơi", "học", "vui", "buồn", "khóc", "cười", "có", "không", "thích", "ghét", "đứng", "ngồi"];
+    var English = ["eat", "drink", "sleep", "play", "sing", "swim", "learn", "happy", "sad", "cry", "smile", "yes", "no", "like", "hate", "stand", "sit"];
+    function Nhap() {
+        var word = document.getElementById("word").value;
+        for (var i = 0; i < VietNamese.length; i++) {
+            if (word === VietNamese[i]) {
+                alert(English[i]);
+                break;
+            } else if (word === English[i]) {
+                alert(VietNamese[i]);
+                break;
+            }
+            if ((word !== VietNamese[i]) && (word !== English[i])) {
+                alert("Nhập từ khác hộ cái");
+            }
+        }
+    }
+
+
+</script>
+</body>
+</html>

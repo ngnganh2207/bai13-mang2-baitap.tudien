@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DictionaryVer3.0</title>
+</head>
+<body>
+    <input type="text" id="input" placeholder="Enter the work in here" style="color: brown"/>
+    <input type="button" id="timkiem" value="Translate" style="background: green" onclick="timtu()"/>
+<script>
+    var vietNamese=['súng','chào','đi','hỏi','làm','quả táo','di chuyển','mặt trời','mặt trăng','sao hỏa'];
+    var engLish=['Gun','hi','go','ask','do','apple','move','sun','moon','mars'];
+
+    function timtu() {
+        var word= document.getElementById('input').value;//phải để trong function. Nếu để ngoài thì khi load trang web sẽ nhận giá trị 0 luôn, không nhập được nữa.
+        var indexvn=-1;
+        var indexen=-1;
+        for (i = 0; i < vietNamese.length; i++) {
+            if (word === vietNamese[i]) {
+                indexen=i;
+                break;
+            } else if (word === engLish[i]) {
+               indexvn=i;
+                break;
+            }
+        }
+        if(indexvn==-1&&indexen==-1){
+            alert('Không tìm thấy')
+        }else if(indexen!=-1){
+            alert(engLish[indexen]);
+        }
+        else
+            alert(vietNamese[indexvn]);
+
+    }
+
+
+
+
+
+</script>
+</body>
+</html>
